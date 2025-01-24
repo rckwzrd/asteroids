@@ -1,3 +1,4 @@
+import sys
 import pygame
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from player import Player
@@ -19,6 +20,7 @@ def main():
     AsteroidField.containers = (updatable)
     player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
     asteroid_field = AsteroidField()
+
     print("Starting asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
@@ -31,6 +33,10 @@ def main():
             d.draw(screen)
         for u in updatable:
             u.update(dt)
+        for a in asteroids:
+            if a.collision(player):
+                print("Collision you fool!")
+                sys.exit()
         pygame.display.flip()
         dt = clock.tick(60)/1000
 
