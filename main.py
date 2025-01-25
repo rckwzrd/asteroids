@@ -37,6 +37,10 @@ def main():
         for a in asteroids:
             if a.collision(player):
                 sys.exit()
+            for s in shots:
+                if a.collision(s):
+                    a.split()
+                    s.kill()
         for d in drawable:
             d.draw(screen)
         pygame.display.flip()
