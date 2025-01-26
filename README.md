@@ -17,4 +17,4 @@ Some things this simple game is missing:
 - speed power-up
 - ship bombs
 
-The `pygame` library and is strongly OOP and was used to get reps with OOP concepts.
+Game making is a naturally object oriented activity and this is reflected in the `pygame` library. Building asteroids is an opportunity to work with object hierarchy, inheritance, encapsulation, and other OOP concepts.
